@@ -7,23 +7,22 @@ var stor;
 
    chrome.storage.local.get('website', function(store) {    
 		stor = store['website'];
-        console.log(stor);
 		for (index = 0; index < stor.length; index+=3){
-        dat.push({label: String(stor[index]), value: (stor[index + 2])});
-    }
+         dat.push({label: String(stor[index]), value: (stor[index + 2])});
+        }
 	
    pie = new d3pie("pieChart",{ 
         header: {
             title: {
                 text:    "Your Internet Usage",
                 color:    "#333333",
-                fontSize: 20,
+                fontSize: 40,
                 font:     "Times New Roman"
             },
             subtitle: {
                 text: "Are you bringing shame to your family?",
                 color:    "#666666",
-                fontSize: 12,
+                fontSize: 20,
                 font:     "Times New Roman"
             },
             location: "pie-center",
@@ -46,7 +45,7 @@ var stor;
             sortOrder: "none",
             smallSegmentGrouping: {
                 enabled: true,
-                value: 4,
+                value: 1,
                 valueType: "percentage",
                 label: "Other",
                 color: "#cccccc"
@@ -58,7 +57,7 @@ var stor;
         },
         labels: {
             outer: {
-                format: "label",
+                format: "label-value1",
                 hideWhenLessThanPercentage: null,
                 pieDistance: 30
             },
