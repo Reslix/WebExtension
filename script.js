@@ -7,10 +7,10 @@ var stor;
 
    chrome.storage.local.get('website', function(store) {    
 		stor = store['website'];
+        console.log(stor);
 		for (index = 0; index < stor.length; index+=3){
         dat.push({label: String(stor[index]), value: (stor[index + 2])});
     }
-	alert(stor);
 	
    pie = new d3pie("pieChart",{ 
         header: {
@@ -60,7 +60,7 @@ var stor;
             outer: {
                 format: "label",
                 hideWhenLessThanPercentage: null,
-                pieDistance: 0
+                pieDistance: 30
             },
             inner: {
                 format: "percentage",

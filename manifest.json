@@ -18,9 +18,9 @@
  
   "permissions": [
 	"tabs",
-    "activeTab",
+  "activeTab",
 	"storage",
 	"notifications",
-    "https://ajax.googleapis.com/"
+   "https://ajax.googleapis.com/"
   ]
 }
